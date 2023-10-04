@@ -110,7 +110,7 @@ public:
             sum = clamp<int16_t>(sum, 0, 255);
             uint8_t out_xy = u8_out(x, y);
             if (sum != out_xy) {
-                printf("Conv3x3a16: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sum);
+                fprintf(stderr,"Conv3x3a16: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sum);
                 abort();
             }
         });
@@ -187,7 +187,7 @@ public:
 
             uint8_t out_xy = u8_out(x, y);
             if (max_val != out_xy) {
-                printf("Dilate3x3: Mismatch at %d %d : %d != %d\n", x, y, out_xy, max_val);
+                fprintf(stderr,"Dilate3x3: Mismatch at %d %d : %d != %d\n", x, y, out_xy, max_val);
                 abort();
             }
         });
@@ -256,7 +256,7 @@ public:
             uint8_t median_val = inp9[4];
             uint8_t out_xy = u8_out(x, y);
             if (median_val != out_xy) {
-                printf("Median3x3: Mismatch at %d %d : %d != %d\n", x, y, out_xy, median_val);
+                fprintf(stderr,"Median3x3: Mismatch at %d %d : %d != %d\n", x, y, out_xy, median_val);
                 abort();
             }
         });
@@ -327,7 +327,7 @@ public:
             uint8_t blur_val = blur >> 8;
             uint8_t out_xy = u8_out(x, y);
             if (blur_val != out_xy) {
-                printf("Gaussian5x5: Mismatch at %d %d : %d != %d\n", x, y, out_xy, blur_val);
+                fprintf(stderr,"Gaussian5x5: Mismatch at %d %d : %d != %d\n", x, y, out_xy, blur_val);
                 abort();
             }
         });
@@ -403,7 +403,7 @@ public:
 
             uint8_t out_xy = u8_out(x, y);
             if (sobel_val != out_xy) {
-                printf("Sobel: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sobel_val);
+                fprintf(stderr,"Sobel: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sobel_val);
                 abort();
             }
         });
@@ -487,7 +487,7 @@ public:
             sum = clamp(sum, 0, 255);
             uint8_t out_xy = u8_out(x, y);
             if (sum != out_xy) {
-                printf("Conv3x3a32: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sum);
+                fprintf(stderr,"Conv3x3a32: Mismatch at %d %d : %d != %d\n", x, y, out_xy, sum);
                 abort();
             }
         });
